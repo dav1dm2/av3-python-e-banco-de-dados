@@ -1,0 +1,63 @@
+=====================EMPREGADOS=================================================================
+
+""" 
+INSERT INTO Empregados (Nome, CPF, Cargo, Salario, DataAdmissao, Senha)
+VALUES (%s, %s, %s, %s, %s, %s)
+"""
+
+"DELETE FROM Empregados WHERE Nome LIKE %s"
+
+"DELETE FROM Clientes WHERE Nome LIKE %s"
+
+"DELETE FROM Entregadores WHERE Nome LIKE %s"
+
+"DELETE FROM RestaurantesAfiliados WHERE Nome LIKE %s"
+
+=======================CLIENTES==========================================================
+
+"""
+INSERT INTO Enderecos (Estado, Cidade, Bairro, Rua, Numero, CEP)
+VALUES (%s, %s, %s, %s, %s, %s)
+RETURNING ID
+"""
+
+"""
+INSERT INTO Clientes (Nome, CPF, Telefone, EnderecoID, Senha)
+VALUES (%s, %s, %s, %s, %s)
+"""
+======================RESTAURANTES=AFILIADOS=====================================================
+
+"DELETE FROM Produtos WHERE Nome = %s AND RestauranteID = %s"
+
+"""
+INSERT INTO Produtos (Nome, Descricao, Preco, RestauranteID)
+VALUES (%s, %s, %s, %s)
+"""
+
+"""
+INSERT INTO Enderecos (Estado, Cidade, Bairro, Rua, Numero, CEP)
+VALUES (%s, %s, %s, %s, %s, %s)
+RETURNING ID
+"""
+
+"""
+INSERT INTO RestaurantesAfiliados 
+(Nome, CNPJ, Telefone, Categoria, EnderecoID, Senha)
+VALUES (%s, %s, %s, %s, %s, %s)
+"""
+
+===================ENTRGADORES================================================
+
+"""
+INSERT INTO Entregadores (Nome, CPF, Telefone, TipoVeiculo, CNH, PlacaVeiculo, Senha)
+VALUES (%s, %s, %s, %s, %s, %s, %s)
+"""
+
+
+
+
+
+
+
+
+

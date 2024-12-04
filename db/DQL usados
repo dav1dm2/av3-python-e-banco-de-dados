@@ -1,0 +1,73 @@
+=====================EMPREGADOS=================================================================
+"SELECT * FROM Empregados WHERE CPF = %s"
+
+"SELECT * FROM Empregados ORDER BY Nome"
+
+"SELECT Nome, CPF, Telefone FROM Entregadores"
+
+"SELECT Nome, Categoria, Telefone FROM RestaurantesAfiliados"
+
+"SELECT nome, CPF, Telefone FROM Clientes"
+
+
+=======================CLIENTES==========================================================
+
+"""SELECT ID, Senha FROM Clientes WHERE Nome = %s"""
+
+"""SELECT Nome, Telefone, Categoria, EnderecoID FROM RestaurantesAfiliados"""
+
+"""
+SELECT r.Nome AS Restaurante, p.Nome AS Produto 
+FROM RestaurantesAfiliados r
+JOIN Produtos p ON r.ID = p.RestauranteID
+"""
+
+
+======================RESTAURANTES=AFILIADOS=====================================================
+
+"SELECT * FROM RestaurantesAfiliados WHERE Nome = %s"
+
+"SELECT * FROM Produtos WHERE RestauranteID = %s"
+
+
+===================ENTRGADORES================================================
+
+"SELECT * FROM Entregadores WHERE CPF = %s"
+
+"""
+SELECT r.Nome AS Restaurante, r.Telefone AS TelefoneRestaurante, 
+e.Estado, e.Cidade, e.Bairro, e.Rua, e.Numero, e.CEP
+FROM RestaurantesAfiliados r
+JOIN Enderecos e ON r.EnderecoID = e.ID;
+"""
+
+"""
+SELECT c.Nome AS cliente, e.Rua, e.Numero, e.Bairro, e.Cidade, e.Estado, e.CEP
+FROM Clientes c
+JOIN Enderecos e ON c.EnderecoID = e.ID
+WHERE c.Nome LIKE %s
+ORDER BY c.Nome
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
